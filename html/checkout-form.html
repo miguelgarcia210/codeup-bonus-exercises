@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checkout</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Checkout</h1>
+	<form method="POST" action="https://request-inspector.glitch.me/">
+		<p><em>* indicates required field.</em></p>
+
+		<h3>Card Information</h3>
+
+		<label for="credit-card-number">Credit Card Number: * </label>
+		<input type="text" name="credit-card-number" id="credit-card-number" placeholder="Enter Card #" autofocus="autofocus" required><br>
+
+		<label for="expiration-date">Expiration Date: * </label>
+		<input type="date" name="expiration-date" id="expiration-date" required><br>
+
+		<label>Security Code: * </label>
+		<input type="text" name="security-code" id="security-code" placeholder="###" required><br>
+
+		<h3>Billing Information</h3>
+		<label for="billing-address">Address: * </label>
+		<input type="text" name="billing-address" id="billing-address" placeholder="Enter address" required><br>
+
+		<label for="billing-city">City: * </label>
+		<input type="text" name="billing-city" id="billing-city" placeholder="Enter city" required><br>
+
+		<label for="billing-state">State: * </label>
+		<input type="text" name="billing-state" id="billing-state" placeholder="Enter state" required><br>
+
+		<label for="billing-zipcode">Zipcode: * </label>
+		<input type="text" name="billing-zipcode" id="billing-zipcode" placeholder="Enter zipcode" required><br>
+
+
+		<input type="checkbox" name="card-on-file" id="card-on-file" checked>
+		<label for="card-on-file">Keep this credit card on file for future transactions</label><br>
+
+		<br>
+		<button type="">Buy Now!</button>
+		
+	</form>
+</body>
+</html>

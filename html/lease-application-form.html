@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lease Application</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<header>
+		<div id="header-received-date">
+			<form method="POST" action="https://request-inspector.glitch.me/">	
+				<span>Received on</span>
+				<!-- research print current date -->
+				<input type="date" name="received-date" id="received-date">
+				<label for="received-date">(date)</label>
+				<span>at</span>
+				<!-- research print current time -->
+				<input type="time" name="received-time" id="received-time">
+				<label for="received-time">(time)</label>
+			</form>
+
+		</div>
+
+		<div id="header-title">
+			<img src="">
+			<h2>Texas Association of Realtors&reg</h2>
+			<h1>Residential Lease Application</h1>
+			<span>use of this form by persons who are not members of the texas association of realtors&reg is not authorized.</span>
+			<br>
+			
+			<h6>&copyTexas Association of REALTORS&reg, Inc. 2007</h6>
+			<h3><em>Each occupant and co-applicant 18 years or older must submit a separate application</em></h3>
+			<hr>
+		</div>
+
+	</header>
+
+	<main>
+		<div>
+			<form method="POST" action="https://request-inspector.glitch.me/">
+				<div id="leased-property-address">
+					<label for="property-address">Property Address: </label>
+					<input type="text" name="property-address" id="property-address" placeholder="Enter your address"><br>
+
+					<label>Anticipated: Move-in Date:</label>
+					<input type="text" name="move-in-date" id="move-in-date" placeholder="Est. Date">
+
+					<label for="monthly-rent">Monthly Rent: $</label>
+					<input type="number" name="monthly-rent" id="monthly-rent">
+
+					<label for="security-deposit">Security Deposit</label>
+					<input type="number" name="security-deposit" id="security-deposit">
+					<br>
+				</div>
+				
+				<div id="referred-by">
+					<label>Applicant was referred to Landlord by:</label><br>
+					<input type="checkbox" name="referred-by[]" value="agent-name" id="referred-by-agent-name">
+					<label for="referred-by-agent-name">Real estate agent</label>
+
+					<input type="text" name="referred-agent-name" id="referred-agent-name">
+					<label for="referred-agent-name">(name)</label>
+
+					<input type="text" name="referred-agent-phone" id="referred-agent-phone">
+					<label for="referred-agent-phone">(phone)</label>
+
+					<br>
+
+					<input type="checkbox" name="referred-by[]" value="newspaper" id="referred-by-newspaper">
+					<label for="referred-by-newspaper">Newspaper</label>
+
+					<input type="checkbox" name="referred-by[]" value="sign" id="referred-by-sign">
+					<label for="referred-by-sign">Sign</label>
+
+					<input type="checkbox" name="referred-by[]" value="internet" id="referred-by-internet">
+					<label for="referred-by-internet">Internet</label>
+
+					<input type="checkbox" name="referred-by[]" value="other" id="referred-by-other">
+					<label for="referred-by-other">Other</label>
+					<input type="text" name="referred-by-other-response" id="referred-by-other-response">
+				</div>
+
+				<div id="applicant-name-co-applicant-status">
+					<label>Applicant's name (first, middle, last)</label>
+					<input type="text" name="applicant-name" id="applicant-name">
+					<br>
+
+					<label>Is there a co-applicant?</label>
+					<input type="radio" name="co-applicant-status" value="true" id="co-applicant-status-true">
+					<label for="co-applicant-status-true">Yes</label>
+
+					<input type="radio" name="co-applicant-status" value="false" id="co-applicant-status-false">
+					<label for="co-applicant-status-false">No</label>
+					<span><em><strong>If yes, co-applicant must submit a separate application.</strong></em></span>
+				</div>
+
+				<div id="applicant-identity-information">
+					<label for="applicant-email">Email</label>
+					<input type="text" name="applicant-email" id="applicant-email">
+
+					<label for="applicant-home-phone">Home Phone</label>
+					<input type="text" name="applicant-home-phone" id="applicant-home-phone">
+					<br>
+
+					<label for="applicant-work-phone">Work Phone</label>
+					<input type="text" name="applicant-work-phone" id="applicant-work-phone">
+
+					<label for="applicant-mobile-phone">Mobile/Pager</label>
+					<input type="text" name="applicant-mobile-phone" id="applicant-mobile-phone">
+					<br>
+
+					<label for="applicant-social-security">Soc. Sec. No.</label>
+					<input type="text" name="applicant-social-security" id="applicant-social-security">
+
+					<label for="applicant-driver-license">Driver License No.</label>
+					<input type="text" name="applicant-driver-license" id="applicant-driver-license">
+					<span>in</span>
+					<input type="applicant-driver-license-state" name="applicant-driver-license-state" id="applicant-driver-license-state">
+					<label for="applicant-driver-license-state">(state)</label>
+					<br>
+
+					<!-- prevent applicant from inputting an invalid date (future date) && notify applicant if age requirement of 18 years is not met -->
+					<label for="applicant-date-of-birth">Date of Birth</label>
+					<input type="date" name="applicant-date-of-birth" id="applicant-date-of-birth">
+
+					<label for="applicant-height">Height</label>
+					<input type="text" name="applicant-height" id="applicant-height">
+
+					<label for="applicant-weight">Weight</label>
+					<input type="text" name="applicant-weight" id="applicant-weight">
+
+					<label for="applicant-eye-color">Eye Color</label>
+					<input type="text" name="applicant-eye-color" id="applicant-eye-color">
+					<br>
+
+					<label for="applicant-hair-color">Hair Color</label>
+					<input type="text" name="applicant-hair-color" id="applicant-hair-color">
+
+					<label for="applicant-marital-status">Marital Status</label>
+					<select id="applicant-marital-status">
+						<option hidden disabled selected value> -- select an option -- </option>
+						<option value="single">Single</option>
+						<option value="married">Married</option>
+						<option value="re-married">Re-Married</option>
+						<option value="separated">Separated</option>
+						<option value="divorced">Divorced</option>
+						<option value="widowed">Widowed</option>
+					</select>
+
+					<label for="applicant-citizenship">Citizenship</label>
+					<input type="text" name="applicant-citizenship" id="applicant-citizenship">
+					<label for="applicant-citizenship">(country)</label>
+				</div>
+
+				<div id="applicant-emergency-contact">
+					<span>Emergency Contact: </span>
+					<label for="emergency-contact-name">Name</label>
+					<input type="text" name="emergency-contact-name" id="emergency-contact-name">
+					<br>
+
+					<label for="emergency-contact-address">Address</label>
+					<input type="text" name="emergency-contact-address" id="emergency-contact-address">
+					<br>
+
+					<label for="emergency-contact-phone">Phone</label>
+					<input type="text" name="emergency-contact-phone" id="emergency-contact-phone">
+				</div>
+
+				<div id="property-occupants">
+					<!-- ADD: if 'NAME' is entered require additional fields -->
+					<label>Name</label>
+					<input type="text" name="additional-occupant[]" id="occupant-2-name">
+					<label>Relationship</label>
+					<input type="text" name="additional-occupant[]" id="occupant-2-relationship">
+					<label>Age</label>
+					<input type="text" name="additional-occupant[]" id="occupant-2-age">
+					<br>
+
+					<label>Name</label>
+					<input type="text" name="additional-occupant[]" id="occupant-3-name">
+					<label>Relationship</label>
+					<input type="text" name="additional-occupant[]" id="occupant-3-relationship">
+					<label>Age</label>
+					<input type="text" name="additional-occupant[]" id="occupant-3-age">
+					<br>
+
+					<label>Name</label>
+					<input type="text" name="additional-occupant[]" id="occupant-4-name">
+					<label>Relationship</label>
+					<input type="text" name="additional-occupant[]" id="occupant-4-relationship">
+					<label>Age</label>
+					<input type="text" name="additional-occupant[]" id="occupant-4-age">
+					<br>
+
+					<label>Name</label>
+					<input type="text" name="additional-occupant[]" id="occupant-5-name">
+					<label>Relationship</label>
+					<input type="text" name="additional-occupant[]" id="occupant-5-relationship">
+					<label>Age</label>
+					<input type="text" name="additional-occupant[]" id="occupant-5-age">
+				</div>
+
+				<div id="applicant-current-address-information">
+					<label for="applicant-current-address">Applicant's Current Address: </label>
+					<input type="text" name="applicant-current-address" id="applicant-current-address">
+
+					<label for="applicant-current-apartment-number">Apt. No.</label>
+					<input type="text" name="applicant-current-apartment-number" id="applicant-current-apartment-number">
+					<br>
+					<input type="text" name="applicant-current-address-location" id="applicant-current-address-location">
+					<label for="applicant-current-address-location">(city/state/zip)</label>
+
+					<div id="current-landlord-information">
+						<label for="current-landlord-name">Landlord's Name: </label>
+						<input type="text" name="current-landlord-name" id="current-landlord-name">
+
+						<label for="current-landlord-email">Email</label>
+						<input type="text" name="current-landlord-email" id="current-landlord-email">
+						<br>
+
+						<label for="current-landlord-phone">Phone:</label>
+						<span><em>Day:</em></span>
+						<input type="text" name="current-landlord-phone" id="current-landlord-phone">
+
+						<label for="current-landlord-phone-northern-territory">Nt:</label>
+						<input type="text" name="current-landlord-phone-northern-territory" id="current-landlord-phone-northern-territory">
+
+						<label for="current-landlord-phone-mobile">Mb:</label>
+						<input type="text" name="current-landlord-phone-mobile" id="current-landlord-phone-mobile">
+
+						<label for="current-landlord-fax">Fax:</label>
+						<input type="text" name="current-landlord-fax" id="current-landlord-fax">
+						<br>
+					</div>
+
+					<label for="applicant-current-address-move-in-date">Date Moved-In</label>
+					<input type="date" name="applicant-current-address-move-in-date" id="applicant-current-address-move-in-date">
+
+					<label for="applicant-current-address-move-out-date">Move-Out Date</label>
+					<input type="date" name="applicant-current-address-move-out-date" id="applicant-current-address-move-out-date">
+
+					<label for="applicant-current-address-rent">Rent $</label>
+					<input type="number" name="applicant-current-address-rent" id="applicant-current-address-rent">
+					<br>
+
+					<label for="applicant-current-address-reason-for-move">Reason for move:</label>
+					<input type="text" name="applicant-current-address-reason-for-move" id="applicant-current-address-reason-for-move">
+				</div>
+
+				<div id="applicant-previous-address-information">
+					<label for="applicant-previous-address">Applicant's Previous Address: </label>
+					<input type="text" name="applicant-previous-address" id="applicant-previous-address">
+
+					<label for="applicant-previous-apartment-number">Apt. No.</label>
+					<input type="text" name="applicant-previous-apartment-number" id="applicant-previous-apartment-number">
+					<br>
+
+					<input type="text" name="applicant-previous-address-location" id="applicant-previous-address-location">
+					<label for="applicant-previous-address-location">(city/state/zip)</label>
+
+					<div id="previous-landlord-information">
+						<label for="previous-landlord-name">Landlord's Name: </label>
+						<input type="text" name="previous-landlord-name" id="previous-landlord-name">
+
+						<label for="previous-landlord-email">Email</label>
+						<input type="text" name="previous-landlord-email" id="previous-landlord-email">
+						<br>
+
+						<label for="previous-landlord-phone">Phone:</label>
+						<span><em>Day:</em></span>
+						<input type="text" name="previous-landlord-phone" id="previous-landlord-phone">
+
+						<label for="previous-landlord-phone-northern-territory">Nt:</label>
+						<input type="text" name="previous-landlord-phone-northern-territory" id="previous-landlord-phone-northern-territory">
+
+						<label for="previous-landlord-phone-mobile">Mb:</label>
+						<input type="text" name="previous-landlord-phone-mobile" id="previous-landlord-phone-mobile">
+
+						<label for="previous-landlord-fax">Fax:</label>
+						<input type="text" name="previous-landlord-fax" id="previous-landlord-fax">
+						<br>
+					</div>
+
+					<label for="applicant-previous-address-move-in-date">Date Moved-In</label>
+					<input type="date" name="applicant-previous-address-move-in-date" id="applicant-previous-address-move-in-date">
+
+					<label for="applicant-previous-address-move-out-date">Move-Out Date</label>
+					<input type="date" name="applicant-previous-address-move-out-date" id="applicant-previous-address-move-out-date">
+
+					<label for="applicant-previous-address-rent">Rent $</label>
+					<input type="number" name="applicant-previous-address-rent" id="applicant-previous-address-rent">
+					<br>
+
+					<label for="applicant-previous-address-reason-for-move">Reason for move:</label>
+					<input type="text" name="applicant-previous-address-reason-for-move" id="applicant-previous-address-reason-for-move">
+				</div>
+				
+				<div id="applicant-current-employer-information">
+					<label for="current-employer">Applicant's Current Employer:</label>
+					<input type="text" name="current-employer" id="current-employer">
+					<br>
+
+					<label for="current-employer-address">Address:</label>
+					<input type="text" name="current-employer-address" id="current-employer-address">
+					<span>(street, city, state, zip)</span>
+					<br>
+
+					<label>Supervisor's Name:</label>
+					<input type="text" name="current-employer-supervisor-name" id="current-employer-supervisor-name">
+
+					<label for="current-employer-supervisor-phone">Phone:</label>
+					<input type="text" name="current-employer-supervisor-phone" id="current-employer-supervisor-phone">
+
+					<label for="current-employer-supervisor-fax">Fax:</label>
+					<input type="text" name="current-employer-supervisor-fax" id="current-employer-supervisor-fax">
+					<br>
+
+					<label for="current-employer-supervisor-email">Email</label>
+					<input type="text" name="current-employer-supervisor-email" id="current-employer-supervisor-email">
+					<br>
+
+					<label for="current-employer-start-date">Start Date:</label>
+					<input type="text" name="current-employer-start-date" id="current-employer-start-date">
+
+					<label for="current-employer-gross-monthly-income">Gross Monthly Income: $</label>
+					<input type="number" name="current-employer-gross-monthly-income" id="current-employer-gross-monthly-income">
+
+					<label for="current-employer-position">Position</label>
+					<input type="text" name="current-employer-position" id="current-employer-position">
+				</div>
+
+				<input type="submit" name="submit-button">
+			</form>
+		</div>
+	</main>
+
+	<footer>
+		<div id="page-information">
+			<span>(TAR-2003) 10-16-07</span>
+		</div>
+
+		<div id="page-number">
+			<span>Page 1 of 4</span>
+		</div>
+	</footer>
+</body>
+</html>
